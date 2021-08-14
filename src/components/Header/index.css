@@ -1,0 +1,15 @@
+.banner {
+  max-height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+img {
+  max-height: 100px;
+  max-width: auto;
+}
+
+button {
+  max-height: 80px;
+  max-width: 120px;
+}
