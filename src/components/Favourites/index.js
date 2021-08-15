@@ -1,6 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie";
-import Card from "../Card";
+import CardComic from "../CardComic";
+import CardCharacter from "../CardCharacter";
 
 const Favourites = () => {
   let favCharacters = Cookies.get("favCharacters");
@@ -15,7 +16,7 @@ const Favourites = () => {
         <div className="home-card-wrapper">
           {favCharacters &&
             favCharacters.map((character, index) => {
-              return <Card key={index} data={character} />;
+              return <CardCharacter key={index} data={character} />;
             })}
         </div>
       </div>
@@ -24,7 +25,7 @@ const Favourites = () => {
         <div className="home-card-wrapper">
           {favComics &&
             favComics.map((comic, index) => {
-              return <Card key={index} data={comic} />;
+              return <CardComic key={index} data={comic} />;
             })}
         </div>
       </div>

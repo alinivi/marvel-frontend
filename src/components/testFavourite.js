@@ -1,7 +1,7 @@
 function testFavourite(cookie, data) {
   if (cookie) {
     let parsedCookie = JSON.parse(cookie);
-    if (parsedCookie.indexOf(data) === -1) return false;
+    if (!parsedCookie.find((elem) => elem._id === data._id)) return false;
     else return true;
   } else return false;
 }

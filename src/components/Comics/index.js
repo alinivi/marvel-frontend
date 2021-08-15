@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import Card from "../Card";
+import CardComic from "../CardComic";
 import Pagination from "../Pagination";
 
 const Comics = ({ search }) => {
@@ -9,12 +9,11 @@ const Comics = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [currPage, setCurrPage] = useState(1);
   const [maxPages, setMaxPages] = useState(1);
-  const YOUR_API_KEY = "P6Uy9rLZIeh2l7AA";
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${YOUR_API_KEY}&skip=${
+        `https://marvel-imitation-backend.herokuapp.com/comics?skip=${
           (currPage - 1) * 100
         }&title=${search}`
       );
@@ -37,7 +36,7 @@ const Comics = ({ search }) => {
       <div className="home-card-wrapper">
         {comics.results &&
           comics.results.map((comic, index) => {
-            return <Card key={index} data={comic} />;
+            return <CardComic key={index} data={comic} />;
           })}
       </div>
       <Pagination

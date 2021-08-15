@@ -16,16 +16,15 @@ function App() {
   const [comics, setComics] = useState([]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const YOUR_API_KEY = "P6Uy9rLZIeh2l7AA";
 
   useEffect(() => {
     const fetchData = async () => {
       const response1 = await axios.get(
-        `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${YOUR_API_KEY}&limit=25`
+        `https://marvel-imitation-backend.herokuapp.com/characters?limit=25`
       );
       setCharacters(response1.data);
       const response2 = await axios.get(
-        `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${YOUR_API_KEY}&limit=25`
+        `https://marvel-imitation-backend.herokuapp.com/comics?limit=25`
       );
       setComics(response2.data);
       setIsLoading(false);
