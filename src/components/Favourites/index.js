@@ -7,6 +7,7 @@ const Favourites = () => {
   if (favCharacters) favCharacters = JSON.parse(favCharacters);
   let favComics = Cookies.get("favComics");
   if (favComics) favComics = JSON.parse(favComics);
+
   return (
     <div>
       <div>

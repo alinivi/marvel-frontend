@@ -18,7 +18,7 @@ const CharacterDetails = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [params.id]);
   return isLoading ? (
     <>loading...</>
   ) : (

@@ -13,6 +13,7 @@ const Home = ({ isLoading, characters, comics }) => {
               <img
                 key={index}
                 src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                alt="character"
               />
             );
           })}
@@ -26,6 +27,7 @@ const Home = ({ isLoading, characters, comics }) => {
               <img
                 key={index}
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                alt="comic"
               />
             );
           })}

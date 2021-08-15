@@ -4,11 +4,16 @@ import "./index.css";
 import heartSolid from "../../assets/heartSolid.svg";
 import heartRegular from "../../assets/heartRegular.svg";
 import Cookies from "js-cookie";
+import testFavourite from "../testFavourite.js";
 
 const Card = ({ data }) => {
   const history = useHistory();
   const location = useLocation();
-  const [isFavourite, setIsFavourite] = useState(false);
+  let isContained = false;
+  if (location.pathname === "/personnages")
+    isContained = testFavourite(Cookies.get("favCharacters"), data);
+  else isContained = testFavourite(Cookies.get("favComics"), data);
+  const [isFavourite, setIsFavourite] = useState(isContained);
 
   return (
     <div className="card" onClick={() => history.push(`/comics/:${data._id}`)}>
