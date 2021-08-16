@@ -1,7 +1,11 @@
 .banner {
-  max-height: 100px;
+  height: 20vh;
+  min-height: 80px;
   width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
 }
 
 img {
@@ -9,7 +13,25 @@ img {
   max-width: auto;
 }
 
+input {
+  font-family: Copperplate;
+  font-size: 1.2em;
+  max-height: 8vh;
+  min-height: 40px;
+  max-width: 30vw;
+  width: 25vw;
+  min-width: 175px;
+  border: solid black 1px;
+}
+
 button {
-  max-height: 80px;
-  max-width: 120px;
+  background: white;
+  border: solid black 1px;
+  font-family: Copperplate;
+  font-size: 1.2em;
+  max-height: 10vh;
+  min-height: 50px;
+  max-width: 14vw;
+  min-width: 135px;
+  margin-left: 1vw;
 }

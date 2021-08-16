@@ -18,11 +18,6 @@ const Personnages = ({ search }) => {
           (currPage - 1) * 100
         }&name=${search}`
       );
-      console.log(
-        `https://marvel-imitation-backend.herokuapp.com/characters?skip=${
-          (currPage - 1) * 100
-        }&name=${search}`
-      );
       setCharacters(response.data);
       setMaxPages(parseInt(response.data.count / 100) + 1);
       setIsLoading(false);

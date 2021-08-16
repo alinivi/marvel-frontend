@@ -19,11 +19,11 @@ const CardComic = ({ data }) => {
       />
       {!isFavourite ? (
         <img
-          className="addFavourites"
+          className="empty-heart"
           onClick={(event) => {
             event.stopPropagation();
             let favComics = Cookies.get("favComics");
-            if (favComics !== "") {
+            if (favComics !== undefined) {
               favComics = JSON.parse(favComics);
               favComics.push(data);
               favComics = JSON.stringify(favComics);
@@ -36,7 +36,7 @@ const CardComic = ({ data }) => {
         />
       ) : (
         <img
-          className="addFavourites"
+          className="full-heart"
           onClick={(event) => {
             event.stopPropagation();
             let favComics = Cookies.get("favComics");

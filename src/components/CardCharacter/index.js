@@ -19,11 +19,11 @@ const CardCharacter = ({ data }) => {
       />
       {!isFavourite ? (
         <img
-          className="addFavourites"
+          className="empty-heart"
           onClick={(event) => {
             event.stopPropagation();
             let favCharacters = Cookies.get("favCharacters");
-            if (favCharacters !== "") {
+            if (favCharacters !== undefined) {
               favCharacters = JSON.parse(favCharacters);
               favCharacters.push(data);
               favCharacters = JSON.stringify(favCharacters);
@@ -36,7 +36,7 @@ const CardCharacter = ({ data }) => {
         />
       ) : (
         <img
-          className="addFavourites"
+          className="full-heart"
           onClick={(event) => {
             event.stopPropagation();
             let favCharacters = Cookies.get("favCharacters");
@@ -47,7 +47,7 @@ const CardCharacter = ({ data }) => {
             setIsFavourite(false);
           }}
           src={heartSolid}
-          alt="favourite"
+          alt="remove from favourites"
         />
       )}
       <div>{data.name}</div>

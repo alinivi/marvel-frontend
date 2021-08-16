@@ -12,20 +12,18 @@ const Header = ({ setSearch }) => {
       </Link>
       {(location.pathname === "/personnages" ||
         location.pathname === "/comics") && (
-        <div className="search-container">
-          <input
-            type="text"
-            className="search-input"
-            placeholder={
-              location.pathname === "/comics"
-                ? "Search comic"
-                : "Search character"
-            }
-            onChange={(event) => setSearch(event.target.value)}
-          />
-        </div>
+        <input
+          type="text"
+          className="search-input"
+          placeholder={
+            location.pathname === "/comics"
+              ? "Search comic"
+              : "Search character"
+          }
+          onChange={(event) => setSearch(event.target.value)}
+        />
       )}
-      <div>
+      <div className="banner-buttons">
         <Link to="/personnages">
           <button>Personnages</button>
         </Link>

@@ -17,7 +17,14 @@ div {
   overflow: hidden;
 }
 
-.addFavourites {
-  height: 20px;
-  width: 20px;
+.empty-heart {
+  filter: invert(1);
+  height: 25px;
+  width: 25px;
+}
+
+.full-heart {
+  filter: invert(1);
+  height: 25px;
+  width: 25px;
 }

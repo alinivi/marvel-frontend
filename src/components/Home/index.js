@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 const Home = ({ isLoading, characters, comics }) => {
@@ -6,37 +7,45 @@ const Home = ({ isLoading, characters, comics }) => {
     <div>data is loading</div>
   ) : (
     <div className="home">
-      <div>
-        <h2>Characters</h2>
-        <div className="carrousel">
-          {characters.results &&
-            characters.results.map((character, index) => {
-              return (
-                <img
-                  key={index}
-                  src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                  alt="character"
-                />
-              );
-            })}
+      <Link to="personnages" className="link">
+        <div className="container-carrousel">
+          <h1>
+            <span>Explore</span> the characters
+          </h1>
+          <div className="carrousel">
+            {characters.results &&
+              characters.results.map((character, index) => {
+                return (
+                  <img
+                    key={index}
+                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                    alt="character"
+                  />
+                );
+              })}
+          </div>
         </div>
-      </div>
+      </Link>
 
-      <div>
-        <h2>Comics</h2>
-        <div className="carrousel">
-          {comics.results &&
-            comics.results.map((comic, index) => {
-              return (
-                <img
-                  key={index}
-                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                  alt="comic"
-                />
-              );
-            })}
+      <Link to="comics" className="link">
+        <div className="container-carrousel">
+          <h1>
+            <span>Explore</span> the comics
+          </h1>
+          <div className="carrousel">
+            {comics.results &&
+              comics.results.map((comic, index) => {
+                return (
+                  <img
+                    key={index}
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                    alt="comic"
+                  />
+                );
+              })}
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
