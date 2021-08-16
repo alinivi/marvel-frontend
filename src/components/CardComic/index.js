@@ -13,45 +13,51 @@ const CardComic = ({ data }) => {
 
   return (
     <div className="card" onClick={() => history.push(`/comics/:${data._id}`)}>
-      <img
-        src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
-        alt="character"
-      />
-      {!isFavourite ? (
+      <div className="card-images">
         <img
-          className="empty-heart"
-          onClick={(event) => {
-            event.stopPropagation();
-            let favComics = Cookies.get("favComics");
-            if (favComics !== undefined) {
+          className="comic-image"
+          src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
+          alt="character"
+        />
+        {!isFavourite ? (
+          <img
+            className="empty-heart"
+            onClick={(event) => {
+              event.stopPropagation();
+              let favComics = Cookies.get("favComics");
+              if (favComics !== undefined) {
+                favComics = JSON.parse(favComics);
+                favComics.push(data);
+                favComics = JSON.stringify(favComics);
+              } else favComics = "[" + JSON.stringify(data) + "]";
+              Cookies.set("favComics", favComics, { expires: 7 });
+              setIsFavourite(true);
+            }}
+            src={heartRegular}
+            alt="add to favorites"
+          />
+        ) : (
+          <img
+            className="full-heart"
+            onClick={(event) => {
+              event.stopPropagation();
+              let favComics = Cookies.get("favComics");
               favComics = JSON.parse(favComics);
-              favComics.push(data);
+              favComics.splice(favComics.indexOf(data), 1);
               favComics = JSON.stringify(favComics);
-            } else favComics = "[" + JSON.stringify(data) + "]";
-            Cookies.set("favComics", favComics, { expires: 7 });
-            setIsFavourite(true);
-          }}
-          src={heartRegular}
-          alt="add to favorites"
-        />
-      ) : (
-        <img
-          className="full-heart"
-          onClick={(event) => {
-            event.stopPropagation();
-            let favComics = Cookies.get("favComics");
-            favComics = JSON.parse(favComics);
-            favComics.splice(favComics.indexOf(data), 1);
-            favComics = JSON.stringify(favComics);
-            Cookies.set("favComics", favComics, { expires: 7 });
-            setIsFavourite(false);
-          }}
-          src={heartSolid}
-          alt="remove from favourites"
-        />
-      )}
-      <div>{data.title}</div>
-      <div>{data.description}</div>
+              Cookies.set("favComics", favComics, { expires: 7 });
+              setIsFavourite(false);
+            }}
+            src={heartSolid}
+            alt="remove from favourites"
+          />
+        )}
+      </div>
+
+      <div className="card-info">
+        <div className="name">{data.title}</div>
+        <div className="description">{data.description}</div>
+      </div>
     </div>
   );
 };
