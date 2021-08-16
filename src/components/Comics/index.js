@@ -12,6 +12,7 @@ const Comics = ({ search }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setComics([]); //need to do this as setComics takes some time to update and therefore the function that checks if the comic is a favorite will not function properly (it will check based on the pre-update list of comics)
       const response = await axios.get(
         `https://marvel-imitation-backend.herokuapp.com/comics?skip=${
           (currPage - 1) * 100

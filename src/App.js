@@ -8,7 +8,6 @@ import Favourites from "./components/Favourites";
 
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Cookies from "js-cookie";
 import axios from "axios";
 
 function App() {
@@ -31,9 +30,6 @@ function App() {
     };
     fetchData();
   }, []);
-
-  Cookies.set("favCharacters", "");
-  Cookies.set("favComics", "");
 
   return (
     <div>

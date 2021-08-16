@@ -12,6 +12,7 @@ const Personnages = ({ search }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setCharacters([]);
       const response = await axios.get(
         `https://marvel-imitation-backend.herokuapp.com/characters?skip=${
           (currPage - 1) * 100

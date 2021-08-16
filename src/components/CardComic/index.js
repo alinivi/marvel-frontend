@@ -47,7 +47,7 @@ const CardComic = ({ data }) => {
             setIsFavourite(false);
           }}
           src={heartSolid}
-          alt="favourite"
+          alt="remove from favourites"
         />
       )}
       <div>{data.title}</div>
