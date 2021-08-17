@@ -10,6 +10,10 @@ const CardComic = ({ data }) => {
   const history = useHistory();
   let isContained = testFavourite(Cookies.get("favComics"), data);
   const [isFavourite, setIsFavourite] = useState(isContained);
+  if (data.description) {
+    data.description = data.description.replace("&#39;", "'");
+    data.description = data.description.replace("&ndash", "-");
+  }
 
   return (
     <div className="card" onClick={() => history.push(`/comics/:${data._id}`)}>

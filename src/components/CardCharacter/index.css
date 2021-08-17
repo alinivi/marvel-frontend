@@ -6,10 +6,15 @@
   width: 20vw;
   max-height: 450px;
   max-width: 300px;
-  border: solid 1px red;
+}
+
+.card:hover {
+  background-color: rgb(255, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .card-images {
+  position: relative;
 }
 
 .character-image {
@@ -33,6 +38,10 @@
 
 .card-info {
   overflow: hidden;
+}
+
+.name {
+  text-align: center;
 }
 
 .description {

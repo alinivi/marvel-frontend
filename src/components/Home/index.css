@@ -33,6 +33,7 @@ h1 > span {
   display: flex;
   overflow: scroll;
   margin-top: 10px;
+  height: 25vh;
 }
 
 .carrousel::-webkit-scrollbar {

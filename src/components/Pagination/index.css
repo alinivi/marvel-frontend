@@ -1,0 +1,13 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  width: 35vw;
+  position: relative;
+  left: 35%;
+  border: solid white 1px;
+}
+
+.pagination > span:hover {
+  cursor: pointer;
+}

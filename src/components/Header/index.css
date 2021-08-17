@@ -35,3 +35,9 @@ button {
   min-width: 135px;
   margin-left: 1vw;
 }
+
+button:hover {
+  cursor: pointer;
+  background: red;
+  color: white;
+}

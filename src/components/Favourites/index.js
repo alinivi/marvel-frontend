@@ -10,22 +10,25 @@ const Favourites = () => {
   if (favComics) favComics = JSON.parse(favComics);
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="container-carrousel">
         <h2>Favourite Characters</h2>
-        <div className="home-card-wrapper">
+        <div className="carrousel">
           {favCharacters &&
             favCharacters.map((character, index) => {
-              return <CardCharacter key={index} data={character} />;
+              return (
+                <CardCharacter className="comic" key={index} data={character} />
+              );
             })}
         </div>
       </div>
-      <div>
+
+      <div className="container-carrousel">
         <h2>Favourite Comics</h2>
         <div className="home-card-wrapper">
           {favComics &&
             favComics.map((comic, index) => {
-              return <CardComic key={index} data={comic} />;
+              return <CardComic className="card" key={index} data={comic} />;
             })}
         </div>
       </div>

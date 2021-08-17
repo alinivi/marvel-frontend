@@ -6,7 +6,6 @@
   width: 20vw;
   max-height: 450px;
   max-width: 300px;
-  border: solid 1px red;
   margin: 20px;
 }
 
@@ -22,14 +21,26 @@
   width: 25px;
 }
 
+.empty-heart:hover {
+  cursor: pointer;
+}
+
 .full-heart {
   filter: invert(1);
   height: 25px;
   width: 25px;
 }
 
+.full-heart:hover {
+  cursor: pointer;
+}
+
 .card-info {
   overflow: hidden;
+}
+
+.name {
+  text-align: center;
 }
 
 .description {
