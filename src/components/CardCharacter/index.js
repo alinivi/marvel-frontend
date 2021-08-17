@@ -14,8 +14,14 @@ const CardCharacter = ({ data }) => {
 
   return (
     <div
-      className={location.pathname !== "/favourites" ? "card" : "fav-card"}
-      onClick={() => history.push(`/comics/${data._id}`)}
+      className={
+        location.pathname !== "/favourites" ? "card-character" : "fav-card"
+      }
+      onClick={() =>
+        history.push(`/comics/${data._id}`, {
+          name: data.name,
+        })
+      }
     >
       <div className="card-images">
         <img

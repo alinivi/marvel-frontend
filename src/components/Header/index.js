@@ -26,13 +26,19 @@ const Header = ({ setSearch }) => {
       )}
       <div className="banner-buttons">
         <Link to="/personnages">
-          <button>Characters</button>
+          <button className={location.pathname === "/personnages" && "invert"}>
+            Characters
+          </button>
         </Link>
         <Link to="/comics">
-          <button>Comics</button>
+          <button className={location.pathname === "/comics" && "invert"}>
+            Comics
+          </button>
         </Link>
         <Link to="/favourites">
-          <button>Favourites</button>
+          <button className={location.pathname === "/favourites" && "invert"}>
+            Favourites
+          </button>
         </Link>
       </div>
     </div>

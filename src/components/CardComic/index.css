@@ -1,4 +1,4 @@
-.card {
+.card-comic {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +8,10 @@
   max-width: 300px;
   margin: 25px;
   overflow: auto;
+}
+
+.card-comic:hover {
+  background-color: rgb(255, 0, 0, 0.2);
 }
 
 .fav-card {
@@ -30,6 +34,7 @@
   display: inline;
   flex-wrap: nowrap;
 }
+
 .comic-image {
   object-fit: contain;
   max-height: 200px;

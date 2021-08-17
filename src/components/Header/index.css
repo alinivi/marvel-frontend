@@ -46,3 +46,8 @@ button:hover {
   background: red;
   color: white;
 }
+
+.invert {
+  background: red;
+  color: white;
+}

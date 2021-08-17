@@ -16,7 +16,9 @@ const CardComic = ({ data }) => {
   }
 
   return (
-    <div className={location.pathname !== "favourites" ? "card" : "fav-card"}>
+    <div
+      className={location.pathname !== "favourites" ? "card-comic" : "fav-card"}
+    >
       <div className="card-images">
         <img
           className="comic-image"
