@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "./index.css";
 import heartSolid from "../../assets/heartSolid.svg";
 import heartRegular from "../../assets/heartRegular.svg";
@@ -8,11 +8,15 @@ import testFavourite from "../testFavourite.js";
 
 const CardCharacter = ({ data }) => {
   const history = useHistory();
+  const location = useLocation();
   let isContained = testFavourite(Cookies.get("favCharacters"), data);
   const [isFavourite, setIsFavourite] = useState(isContained);
 
   return (
-    <div className="card" onClick={() => history.push(`/comics/${data._id}`)}>
+    <div
+      className={location.pathname !== "/favourites" ? "card" : "fav-card"}
+      onClick={() => history.push(`/comics/${data._id}`)}
+    >
       <div className="card-images">
         <img
           className="character-image"
@@ -56,7 +60,9 @@ const CardCharacter = ({ data }) => {
 
       <div className="card-info">
         <div className="name">{data.name}</div>
-        <div className="description">{data.description}</div>
+        {location.pathname !== "/favourites" && (
+          <div className="description">{data.description}</div>
+        )}
       </div>
     </div>
   );

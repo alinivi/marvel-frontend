@@ -4,8 +4,25 @@
   align-items: center;
   height: 45vh;
   width: 20vw;
-  max-height: 450px;
+  max-height: auto;
   max-width: 300px;
+  overflow: auto;
+}
+
+.fav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.fav-card > div > img {
+  object-fit: contain;
+  max-height: 120px;
+  max-width: auto;
 }
 
 .card:hover {
@@ -37,7 +54,7 @@
 }
 
 .card-info {
-  overflow: hidden;
+  box-sizing: content-box;
 }
 
 .name {
@@ -45,9 +62,7 @@
 }
 
 .description {
-  overflow: hidden;
   margin-top: 5px;
   line-height: 1.1em;
-  text-overflow: ellipsis;
   font-family: "Balthazar", serif;
 }

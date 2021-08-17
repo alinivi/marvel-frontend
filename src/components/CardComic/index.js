@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./index.css";
 import heartSolid from "../../assets/heartSolid.svg";
 import heartRegular from "../../assets/heartRegular.svg";
@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import testFavourite from "../testFavourite.js";
 
 const CardComic = ({ data }) => {
-  const history = useHistory();
+  const location = useLocation();
   let isContained = testFavourite(Cookies.get("favComics"), data);
   const [isFavourite, setIsFavourite] = useState(isContained);
   if (data.description) {
@@ -16,7 +16,7 @@ const CardComic = ({ data }) => {
   }
 
   return (
-    <div className="card" onClick={() => history.push(`/comics/:${data._id}`)}>
+    <div className={location.pathname !== "favourites" ? "card" : "fav-card"}>
       <div className="card-images">
         <img
           className="comic-image"
@@ -60,7 +60,9 @@ const CardComic = ({ data }) => {
 
       <div className="card-info">
         <div className="name">{data.title}</div>
-        <div className="description">{data.description}</div>
+        {location.pathname !== "/favourites" && (
+          <div className="description">{data.description}</div>
+        )}
       </div>
     </div>
   );

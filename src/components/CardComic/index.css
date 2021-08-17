@@ -3,12 +3,33 @@
   flex-direction: column;
   align-items: center;
   height: 45vh;
-  width: 20vw;
-  max-height: 450px;
+  width: 25vw;
+  max-height: auto;
   max-width: 300px;
-  margin: 20px;
+  margin: 25px;
+  overflow: auto;
 }
 
+.fav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15vh;
+  width: 20vw;
+  max-height: 200px;
+  max-width: 250px;
+}
+
+.fav-card > div > img {
+  object-fit: contain;
+  max-height: 120px;
+  max-width: auto;
+}
+
+.card-images {
+  display: inline;
+  flex-wrap: nowrap;
+}
 .comic-image {
   object-fit: contain;
   max-height: 200px;
@@ -35,18 +56,13 @@
   cursor: pointer;
 }
 
-.card-info {
-  overflow: hidden;
-}
-
 .name {
   text-align: center;
 }
 
 .description {
-  overflow: hidden;
   margin-top: 5px;
   line-height: 1.1em;
-  text-overflow: ellipsis;
+  text-align: justify;
   font-family: "Balthazar", serif;
 }
