@@ -46,7 +46,7 @@ function App() {
           <Route path="/personnages">
             <Personnages search={search} />
           </Route>
-          <Route path="/comics">
+          <Route exact path="/comics">
             <Comics search={search} />
           </Route>
           <Route path="/comics/:id">

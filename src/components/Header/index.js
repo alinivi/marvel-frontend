@@ -10,11 +10,10 @@ const Header = ({ setSearch }) => {
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      {(location.pathname === "/personnages" ||
-        location.pathname === "/comics") && (
+      {location.pathname === "/personnages" ||
+      location.pathname === "/comics" ? (
         <input
           type="text"
-          className="search-input"
           placeholder={
             location.pathname === "/comics"
               ? "Search comic"
@@ -22,10 +21,12 @@ const Header = ({ setSearch }) => {
           }
           onChange={(event) => setSearch(event.target.value)}
         />
+      ) : (
+        <div className="no-search-input"></div>
       )}
       <div className="banner-buttons">
         <Link to="/personnages">
-          <button>Personnages</button>
+          <button>Characters</button>
         </Link>
         <Link to="/comics">
           <button>Comics</button>

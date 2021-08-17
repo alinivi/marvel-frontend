@@ -12,7 +12,7 @@ const CardCharacter = ({ data }) => {
   const [isFavourite, setIsFavourite] = useState(isContained);
 
   return (
-    <div className="card" onClick={() => history.push(`/comics/:${data._id}`)}>
+    <div className="card" onClick={() => history.push(`/comics/${data._id}`)}>
       <div className="card-images">
         <img
           className="character-image"

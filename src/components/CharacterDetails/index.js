@@ -21,14 +21,14 @@ const CharacterDetails = () => {
   return isLoading ? (
     <>loading...</>
   ) : (
-    <>
+    <div>
       <div className="home-card-wrapper">
-        {comics.results &&
-          comics.results.map((comic, index) => {
+        {comics.comics &&
+          comics.comics.map((comic, index) => {
             return <CardComic key={index} data={comic} />;
           })}
       </div>
-    </>
+    </div>
   );
 };
 
