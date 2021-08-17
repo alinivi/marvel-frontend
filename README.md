@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To-Do/Next steps:
+
+- Handle favourites backend or change mechanism to create new cookies when previous ones are full, as there is a limit to how many values can be stored in cookies (approx. 7-8 values)
+- Make favourites changes dynamic on favourites page (ie, when a favourite is removed, it should disappear from the page automatically)
+- Check issue of lag in updating cookies: when an item is added and removed really fast from favourites several times, it is stored several times in the favourites array so duplicates appear in the array
+
 ## Available Scripts
 
 In the project directory, you can run:
